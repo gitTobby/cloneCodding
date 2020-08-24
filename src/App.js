@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
-import Greeting from './Greeting/Greeting';
-import './App.css';
+import React from 'react';
+import './css/common.css';
 
-class App extends Component {
-  render() {
+function App() {
+   
     return (
       <div>
-        <Greeting />
+        Hello
       </div>
     );
-  }
+  
 }
 
 export default App;
