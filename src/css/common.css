@@ -1,5 +1,16 @@
-body {
-  margin: 0;
-  padding: 10px;
-  font-family: sans-serif;
-}
+/* Reset */
+body *{box-sizing:border-box;}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,img,button,select{margin:0;padding:0}
+body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,button, th,td,input,select,textarea{font-size:14px;line-height:1.3;font-weight:400;font-family:inter, sans-serif;}
+body{word-break:keep-all;word-wrap:break-word;-webkit-text-size-adjust:none;margin:0;padding:0;background:transparent;}
+em,address{font-style:normal}
+.blind{position:absolute !important;clip:rect(0 0 0 0) !important;width:1px !important;height:1px !important;margin:-1px !important;overflow:hidden !important}
+nav,dl,ul,ol,menu,li{margin:0;padding:0;list-style:none;}
+button{cursor:pointer;}
+.fltlft{float:left;}
+.fltrgt{float:right;}
+
+/* Common : Layout */
+.wrap{overflow:hidden;position:absolute;top:0;bottom:0;left:0;right:0;}
+nav{overflow:hidden;overflow-y:auto;position:absolute;top:0;bottom:0;left:0;width:180px;border-right:1px solid #d3d3d3;}
+section{overflow:auto;position:absolute;top:0;bottom:0;left:180px;right:0;}
