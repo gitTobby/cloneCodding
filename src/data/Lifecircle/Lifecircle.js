@@ -12,11 +12,11 @@ class Lifecircle extends React.Component {
     }
 
     componentDidUpdate() {
-        console.log("DidUpdate: component just updated");
+        console.log('DidUpdate: component just updated');
     }
 
     componentWillUnmount() {
-
+        console.log('Goodbye~!');
     }
 
     state = {
@@ -42,31 +42,7 @@ class Lifecircle extends React.Component {
                 <h1>The number is: {this.state.count}</h1>
                 <button type="button" onClick={this.add}>Add</button>
                 <button type="button" onClick={this.minus}>Minus</button>
-                {/* <br /><br /><br /> */}
-                {/* {
-                    (
-                        () => {
-                            if (let i = 0; i < 3; i++) {
-                            
-                        }
-                        }
-                    )
-                } */}
-
-                {/* {
-                    (() => {
-                        const roll = []
-                        for(let i = 0; i < 3; i++){ roll.push(<br />) ; }
-                    })() 
-                } */}
-
-                {
-                    (() => {
-                        let result = numbers.map(() => { return (<br />) });
-                    })()
-                }
-
-
+                <br /><br /><br />
                 <h3>[실행순서]</h3>
                 <p>constructor() ==&gt; render() ==&gt; componentDidMount()</p>
                 <p>setState() ==&gt; render() ==&gt; componentDidUpdate()</p>
