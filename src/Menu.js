@@ -13,6 +13,11 @@ const Menu = () => {
             name: 'Counter',
             text: 'Counter',
         },
+        {
+            inx: '3',
+            name: 'Lifecircle',
+            text: 'Lifecircle',
+        },
     ];
 
     const [isActive, setActive] = useState('false');
