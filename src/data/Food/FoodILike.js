@@ -20,7 +20,7 @@ const FoodILike = () => {
         // }
         FoodData.map(dish => (
             <FoodDataInput /*key={dish.id}*/ name={dish.name} picture={dish.image} rating={dish.rating} />
-        )
+            )
         )
     );
 }

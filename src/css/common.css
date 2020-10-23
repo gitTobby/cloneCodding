@@ -12,5 +12,18 @@ button{cursor:pointer;}
 
 /* Common : Layout */
 .wrap{overflow:hidden;position:absolute;top:0;bottom:0;left:0;right:0;}
-nav{overflow:hidden;overflow-y:auto;position:absolute;top:0;bottom:0;left:0;width:180px;border-right:1px solid #d3d3d3;}
+nav{position:absolute;top:0;bottom:0;left:0;width:180px;border-right:1px solid #d3d3d3;}
 section{overflow:auto;position:absolute;top:0;bottom:0;left:180px;right:0;}
+
+
+nav ul{overflow:hidden;overflow-y:auto;position:absolute;top:0;bottom:0;left:0;right:0;padding:10px;}
+/* nav ul li{} */
+nav ul li:last-child{margin-bottom:8px;}
+nav ul li+li{margin-top:8px;}
+nav li a{
+  display:flex;align-items:center;justify-content:center;
+  width:100%;height:36px;
+  border:1px solid #d3d3d3;border-radius:8px;
+  color:#4a4a4a;font-size:14px;text-decoration:none;
+}
+nav li.selected a{background:#1c90fb;border-color:#1a84e6;color:#fff;}

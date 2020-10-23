@@ -1,17 +1,18 @@
 import React from "react";
+import { Fragment } from "react";
 import { Route, Switch } from "react-router-dom"
 import FoodILike from './data/Food'
 import Counter from './data/Counter'
 
 const Contents = () => {
     return (
-        <div>
+        <Fragment>
             <Switch>
                 {/* <Route exact path="/" component={Home} /> */}
                 <Route path="/Food" component={FoodILike} />
                 <Route path="/Counter" component={Counter} />
             </Switch>
-        </div>
+        </Fragment>
     );
 }
 

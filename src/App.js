@@ -1,8 +1,6 @@
 import React from "react";
-import { Router } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom"
 import './css/common.css';
-
-
 
 import Menu from './Menu'
 import Contents from './Contents'
@@ -16,9 +14,7 @@ const App = () => {
                     <Menu />
                 </nav>
                 <section>
-
                     <Contents />
-
                 </section>
             </div>
         </Router>

@@ -1,17 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom"
 
 const Menu = () => {
+    const menuList = [
+        {
+            inx: '1',
+            name: 'Food',
+            text: 'Food I Like',
+        },
+        {
+            inx: '2',
+            name: 'Counter',
+            text: 'Counter',
+        },
+    ];
+
+    const [isActive, setActive] = useState('false');
+
+    const handleToggle = () => {
+        setActive(!isActive);
+    };
+
     return (
-        <div>
-            <Link to="./Food">
-                <button>Food I Like</button>
-            </Link>
-            <Link to="./Counter">
-                <button>Counter</button>
-            </Link>
-        </div>
+        <ul>
+            {
+                menuList.map(menuAttr => (
+                        <li className={`${isActive ? "selected" : ""}`}>
+                            <Link to={menuAttr.name} onClick={handleToggle} >{menuAttr.text}</Link>
+                        </li>
+                    )
+                )
+            }
+        </ul>
     );
 }
 
 export default Menu;
+
