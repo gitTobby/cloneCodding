@@ -18,6 +18,16 @@ const Menu = () => {
             name: 'Lifecircle',
             text: 'Lifecircle',
         },
+        {
+            inx: '4',
+            name: 'Lorder',
+            text: 'Lorder',
+        },
+        {
+            inx: '5',
+            name: 'Movies',
+            text: 'Movies',
+        },
     ];
 
     const [isActive, setActive] = useState('false');

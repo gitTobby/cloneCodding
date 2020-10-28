@@ -1,7 +1,7 @@
 /* Reset */
 body *{box-sizing:border-box;}
 body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,img,button,select{margin:0;padding:0}
-body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,button, th,td,input,select,textarea{font-size:14px;line-height:1.3;font-weight:400;font-family:inter, sans-serif;}
+/* body,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,button, th,td,input,select,textarea{font-size:14px;line-height:1.3;font-weight:400;font-family:inter, sans-serif;} */
 body{word-break:keep-all;word-wrap:break-word;-webkit-text-size-adjust:none;margin:0;padding:0;background:transparent;}
 em,address{font-style:normal}
 .blind{position:absolute !important;clip:rect(0 0 0 0) !important;width:1px !important;height:1px !important;margin:-1px !important;overflow:hidden !important}
@@ -13,7 +13,7 @@ button{cursor:pointer;}
 /* Common : Layout */
 .wrap{overflow:hidden;position:absolute;top:0;bottom:0;left:0;right:0;}
 nav{position:absolute;top:0;bottom:0;left:0;width:180px;border-right:1px solid #d3d3d3;}
-section{overflow:auto;position:absolute;top:0;bottom:0;left:180px;right:0;padding:16px;}
+section{overflow:auto;position:absolute;top:0;bottom:0;left:180px;right:0;}
 
 
 nav ul{overflow:hidden;overflow-y:auto;position:absolute;top:0;bottom:0;left:0;right:0;padding:10px;}
@@ -26,3 +26,19 @@ nav li a{
   color:#4a4a4a;font-size:14px;text-decoration:none;
 }
 nav li.selected a{background:#1c90fb;border-color:#1a84e6;color:#fff;}
+
+/* 영화앱 */
+.loader{padding:14px;}
+.movies{padding:8px;background:#2f2f2f;}
+.ex_movie_bx{padding:8px;}
+.ex_movie_bx:after{display:block;clear:both;content:'';}
+.ex_movie_bx .inbx{padding:12px;border:1px solid #666;}
+.ex_movie_bx .poster{display:inline-block;width:120px;margin-right:12px;;vertical-align:top;}
+.ex_movie_bx .data{display:inline-block;width:calc(100% - 132px);padding:4px 0;}
+.ex_movie_bx .genres{margin-top:6px;}
+.ex_movie_bx .genres:after{display:block;clear:both;content:'';}
+.ex_movie_bx .genres>li{float:left;color:#fff;font-size:14px;list-style:none;}
+.ex_movie_bx .genres>li+li{margin-left:6px;}
+.ex_movie_bx .title{color:#fff;font-size:18px;}
+.ex_movie_bx .year{margin-top:6px;color:#fff;font-size:14px;}
+.ex_movie_bx .summary{margin-top:14px;color:#fff;font-size:13px;line-height:16px;}
