@@ -28,22 +28,35 @@ const Menu = () => {
             name: 'Movies',
             text: 'Movies',
         },
+        {
+            inx: '6',
+            name: 'Events',
+            text: 'React Event',
+        },
     ];
 
-    const [isActive, setActive] = useState('false');
+    const [isActive, setActive] = useState('1');    // 1은 default
 
-    const handleToggle = () => {
-        setActive(!isActive);
+    const handleToggle = (a) => {
+        console.log(a);
+        setActive(a);
     };
 
     return (
         <ul>
             {
-                menuList.map(menuAttr => (
-                        <li className={`${isActive ? "selected" : ""}`}>
-                            <Link to={menuAttr.name} onClick={handleToggle} >{menuAttr.text}</Link>
+                menuList.map(
+                    menuAttr => (
+                        <li className={`${isActive === menuAttr.inx ? "selected" : ""}`}>
+                            <Link to={menuAttr.name} onClick={() => handleToggle(menuAttr.inx)} >{menuAttr.text}</Link>
                         </li>
                     )
+                    // function a(menuAttr) {
+                    //     return (
+                    //     <li className={`${isActive ? "selected" : ""}`}>
+                    //         <Link to={menuAttr.name} onClick={handleToggle} >{menuAttr.text}</Link>
+                    //     </li>)
+                    // }
                 )
             }
         </ul>
