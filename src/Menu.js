@@ -33,6 +33,11 @@ const Menu = () => {
             name: 'Events',
             text: 'React Event',
         },
+        {
+            inx: '7',
+            name: 'ReactPractice',
+            text: 'React Practice',
+        },
     ];
 
     const [isActive, setActive] = useState('1');    // 1은 default

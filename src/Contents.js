@@ -7,6 +7,7 @@ import Lifecircle from './data/Lifecircle'
 import Lorder from './data/Lorder'
 import Movies from './data/Movies'
 import Events from './data/Events'
+import ReactPractice from './data/ReactPractice'
 
 const Contents = () => {
     return (
@@ -18,6 +19,7 @@ const Contents = () => {
             <Route path="/Lorder" component={Lorder} />
             <Route path="/Movies" component={Movies} />
             <Route path="/Events" component={Events} />
+            <Route path="/ReactPractice" component={ReactPractice} />
         </Switch>
     );
 }

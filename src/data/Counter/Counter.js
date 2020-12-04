@@ -14,7 +14,7 @@ class Counter extends React.Component {
     //아래 함수로 성능개선
     add = () => {
         this.setState(current => ({
-            count: this.state.count + 1,
+            count: current.count + 1,
         }));
     };
 
@@ -25,7 +25,7 @@ class Counter extends React.Component {
     //아래 함수로 성능개선
     minus = () => {
         this.setState(current => ({
-            count: this.state.count - 1,
+            count: current.count - 1,
         }));
     }
 
