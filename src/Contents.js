@@ -8,6 +8,7 @@ import Lorder from './data/Lorder'
 import Movies from './data/Movies'
 import Events from './data/Events'
 import ReactPractice from './data/ReactPractice'
+import Finder from './data/Finder'
 
 const Contents = () => {
     return (
@@ -20,6 +21,7 @@ const Contents = () => {
             <Route path="/Movies" component={Movies} />
             <Route path="/Events" component={Events} />
             <Route path="/ReactPractice" component={ReactPractice} />
+            <Route path="/Finder" component={Finder} />
         </Switch>
     );
 }

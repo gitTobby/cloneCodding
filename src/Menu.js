@@ -38,6 +38,11 @@ const Menu = () => {
             name: 'ReactPractice',
             text: 'React Practice',
         },
+        {
+            inx: '8',
+            name: 'Finder',
+            text: 'Finder',
+        },
     ];
 
     const [isActive, setActive] = useState('1');    // 1은 default
