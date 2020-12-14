@@ -48,7 +48,7 @@ const Menu = () => {
     const [isActive, setActive] = useState('1');    // 1은 default
 
     const handleToggle = (a) => {
-        console.log(a);
+        //console.log(a);
         setActive(a);
     };
 
@@ -57,7 +57,7 @@ const Menu = () => {
             {
                 menuList.map(
                     menuAttr => (
-                        <li className={`${isActive === menuAttr.inx ? "selected" : ""}`}>
+                        <li className={`${isActive === menuAttr.inx ? "selected" : ""}`} key={menuAttr.inx}>
                             <Link to={menuAttr.name} onClick={() => handleToggle(menuAttr.inx)} >{menuAttr.text}</Link>
                         </li>
                     )
