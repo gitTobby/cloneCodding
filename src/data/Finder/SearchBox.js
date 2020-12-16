@@ -1,18 +1,7 @@
 import React from "react";
-
 class SearchBox extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            keyword: '',
-        };
-    };
-
     handleChange = (e) => {
-        this.setState({
-            keyword: e.target.value
-        })
-        this.props.changeValue(e.target.value);
+        this.props.changeValue(e.target.value); // 부모 컴포넌트로 데이터를 변경요청하는 부분
     }
 
     render() {
@@ -21,7 +10,7 @@ class SearchBox extends React.Component {
                 <input 
                     type="text" 
                     placeholder="검색어를 입력하세요" 
-                    value={this.state.keyword}
+                    
                     onChange={this.handleChange}
                 />
             </div>

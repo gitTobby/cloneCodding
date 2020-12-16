@@ -3,7 +3,7 @@ import React from "react";
 class ResultBox extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = {  // 굳이 데이터를 State로 만들 필요 없음
             infoList: [
                 {no: '1', name: '이창민', position: '선임연구원', phone: '010-9427-1015', address: '부산광역시 해운대구 재송동 1073-3 051센텀', email: 'apjammanbo@naver.com'},
                 {no: '2', name: '최명근', position: '선임연구원', phone: '010-4013-8061', address: '김해시 천곡로 26 두산위브 제니스 128동 801호', email: 'choimg0329@naver.com'},
@@ -42,49 +42,17 @@ class ResultBox extends React.Component {
             const ret = [];
             splits.forEach((item, index) => {   // index는 단순히 배열의 순서
                 ret.push(item);
-                //console.log(ret, index);
                 if(index !== splits.length - 1) {
-                    ret.push(highlightTag)
+                    ret.push(highlightTag);
+                    
                 }
-            }); // join() 메소드 사용하여 변경
+                console.log(ret, index);
+            });
             return ret;
         } else {
             return infoText;
         };
     }
-
-    // convertToTag(text) {
-    //     const infoText = text;
-    //     const keywordText = this.state.keyword;
-    //     const highlightTag = <em>{keywordText}</em>;
-
-    //     //console.log(infoText);
-
-    //     // const splits = infoText.split();
-    //     // console.log(splits);
-
-    //     if(keywordText) {
-    //         const splits = infoText.split(",");
-    //         const ret = [];
-            
-    //         console.log(splits);
-
-    //         // splits.forEach((item, index) => {   // index는 단순히 배열의 순서
-                
-    //         //     console.log(item);
-    //         //     ret.push(item);
-                
-    //         //     if(index !== splits.length - 1) {
-    //         //         ret.push(highlightTag)
-    //         //     }
-    //         //     //console.log("============================length=" + splits.length)
-                
-    //         // });
-    //         return ret;
-    //     } else {
-    //         return infoText;
-    //     };
-    // }
 
     mapInfoList = (infoList) => {
         infoList.sort();    // unicode를 비교하여 오름차순 정렬(배열이 바뀜)
@@ -154,7 +122,6 @@ class ResultBox extends React.Component {
                     </ul>
                     {/* Search Eempty */}
                     {/* <div className="search_empty">검색 된 항목이 없습니다.</div> */}
-                
                 </div>
             </div>
         );
