@@ -9,7 +9,7 @@ class SearchBox extends React.Component {
             <div className="search_box">
                 <input 
                     type="text" 
-                    placeholder="검색어를 입력하세요" 
+                    placeholder="코인명 검색" 
                     onChange={this.handleChange}
                 />
             </div>

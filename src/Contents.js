@@ -9,6 +9,7 @@ import Movies from './data/Movies'
 import Events from './data/Events'
 import ReactPractice from './data/ReactPractice'
 import Finder from './data/Finder'
+import CoinList from './data/CoinList'
 
 const Contents = () => {
     return (
@@ -22,6 +23,7 @@ const Contents = () => {
             <Route path="/Events" component={Events} />
             <Route path="/ReactPractice" component={ReactPractice} />
             <Route path="/Finder" component={Finder} />
+            <Route path="/CoinList" component={CoinList} />
         </Switch>
     );
 }

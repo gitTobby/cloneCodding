@@ -43,6 +43,11 @@ const Menu = () => {
             name: 'Finder',
             text: 'Finder',
         },
+        {
+            inx: '9',
+            name: 'CoinList',
+            text: 'Coin List',
+        },
     ];
 
     const [isActive, setActive] = useState('1');    // 1은 default
