@@ -7,28 +7,44 @@ class ResultBox extends React.Component {
         this.state = {
             loading: true,
             info: [],
+            // marketIndex: '',
+            // marketCode: '',
         }
     };
 
-    componentDidMount() {
-        this.getCoinInfo();
-    }
+    // componentDidMount() {
+    //     this.getCoinInfo();
+    // }
 
-    getCoinInfo = async () => {
-        // market 정보 있을 때, 없을 때 구분해서 url 던지자
-        const marketCode = this.props.market;
+    getCoinInfo = async (index, code) => {
+        const marketIndex = index;
+        const marketCode = code;
+
+        // marketCode에 맞게 API 불러오기
         const url = 'https://api.upbit.com/v1/ticker?markets=' + marketCode;
         const coins = await axios.get(url);
         this.setState({
             info: coins.data,
             loading: false,
         });
-        //console.log(this.state.info);
+        
+        console.log("** CoinList.js에서 InfoBox의 getCoinInfo(index, code) 호출완료!! **");
+        console.log('Index: ' + marketIndex + '\n' + 'Code: ' + marketCode);
+        console.log('URL: ' + url);
+
+        console.log(this.state.info);
+        
+        console.log(this.state.info.market);
+        console.log(this.state.info.low_price);
     };
 
     render() {
         const { info, loading } = this.state;
-        //console.log(coins);
+
+        // console.log(this.state.info);
+        // console.log(this.props.marketIndex);
+        // console.log(this.props.marketCode);
+        
         return (
             <div className="info_box">
                 {
@@ -37,11 +53,11 @@ class ResultBox extends React.Component {
                     ) : (
                         <dl className="infomation">
                             <dt>한글명</dt>
-                            <dd>비트코인</dd>
+                            <dd>{info.korean_name}</dd>
                             <dt>영문명</dt>
-                            <dd>Bitcoin</dd>
-                            <dt>현재가</dt>
-                            <dd>5,034원</dd>
+                            <dd>{info.english_name}</dd>
+                            <dt>전일종가</dt>
+                            <dd>{this.state.info.market}</dd>
                         </dl>
                     )
                 }

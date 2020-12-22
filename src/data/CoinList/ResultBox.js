@@ -7,7 +7,7 @@ class ResultBox extends React.Component {
         this.state = {
             loading: true,
             coins: [],
-            market: '',
+            //marketCode: '',
         }
     };
 
@@ -43,10 +43,11 @@ class ResultBox extends React.Component {
     };
 
     handleClick = (e) => {
-        this.setState({
-            market: '',
-        });
-        this.props.changeMarket(this.state.market);
+        const marketIndex = e.currentTarget.dataset.id;
+        const marketCode = this.state.coins[marketIndex].market;
+        this.props.changeMarket(marketIndex, marketCode);
+        // console.log(marketIndex);
+        // console.log(marketCode);
     }
 
     mapCoinList = (coins) => {
@@ -61,10 +62,10 @@ class ResultBox extends React.Component {
         );
         return (
             coins.map((coins, i) => (
-                <li key={i} onClick={this.handleClick}>
+                <li key={i} data-id={i} onClick={this.handleClick}>
                     <div className="dvbx">
                         <div className="item">
-                            <div className="inbx">{coins.korean_name}</div>
+                            <div className="inbx">{coins.korean_name}<p>{coins.market}</p></div>
                         </div>
                         <div className="item">
                             <div className="inbx">{coins.english_name}</div>

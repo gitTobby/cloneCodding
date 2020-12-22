@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import SearchBox from "./SearchBox";
 import ResultBox from "./ResultBox";
 import InfoBox from "./InfoBox";
@@ -8,8 +8,10 @@ class Stocks extends React.Component {
         super();
         this.state = {
             keyword: '',
-            market: '',
+            // marketIndex: '',
+            // marketCode: '',
         };
+        this.InfoBox = React.createRef();
     };
 
     changeValue = (keyword) => {
@@ -19,11 +21,8 @@ class Stocks extends React.Component {
         // console.log(keyword);
     }
 
-    changeMarket = (market) => {
-        this.setState({
-            market: market.market
-        })
-        console.log(market);
+    changeMarket = (marketIndex, marketCode) => {
+        this.InfoBox.current.getCoinInfo(marketIndex, marketCode);
     }
 
     render() {
@@ -40,7 +39,9 @@ class Stocks extends React.Component {
                 </div>
                 <div className="coin_info">
                     <InfoBox 
-                        market={this.state.market}
+                        // marketIndex={this.state.marketIndex}
+                        // marketCode={this.state.marketCode} 
+                        ref={this.InfoBox}
                     />
                 </div>
             </div>
