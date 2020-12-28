@@ -79,7 +79,6 @@ nav li.selected a{background:#1c90fb;border-color:#1a84e6;color:#fff;}
 
 /* Coin List */
 .coin_wrap{position:relative;width:100%;height:100%;padding:20px;}
-/* .coin_wrap:after{display:block;clear:both;content:'';} */
 .coin_wrap .coin_list{position:absolute;top:20px;bottom:20px;left:20px;width:220px;}
 .coin_wrap .coin_list .search_box{background:#f5f5f5;border:1px solid #b4b4b4;border-bottom-color:#e5e5e5;}
 .coin_wrap .coin_list .search_box input{width:100%;padding:8px;border:0;font-size:14px;outline:0;}
@@ -91,16 +90,13 @@ nav li.selected a{background:#1c90fb;border-color:#1a84e6;color:#fff;}
 .coin_wrap .coin_list .result_box .dvbx .item .inbx p{color:#aeaeae;font-size:11px;}
 .coin_wrap .coin_list .result_box .dvbx .item .inbx em{color:#379fff;font-weight:bold;}
 .coin_wrap .coin_list .result_box .result_header{display:flex;padding:3px 0;background:#f1f1f1;border:1px solid #b4b4b4;border-top:0;border-bottom-color:#e5e5e5;color:#212121;font-size:14px;}
-/* .coin_wrap .coin_list .result_box .result_header .dvbx .item:nth-child(4){justify-content:center;} */
 .coin_wrap .coin_list .result_box .result_content{position:absolute;top:34px;bottom:0;left:0;right:0;}
 .coin_wrap .coin_list .result_box .result_content .result_list{overflow:hidden;overflow-y:auto;max-height:100%;border:1px solid #b4b4b4;border-top:0;}
 .coin_wrap .coin_list .result_box .result_content .result_list>li{cursor:pointer;}
 .coin_wrap .coin_list .result_box .result_content .result_list>li:hover,
-.coin_wrap .coin_list .result_box .result_content .result_list>li:focus{background:#dff0ff;}
+.coin_wrap .coin_list .result_box .result_content .result_list>li.selected{background:#dff0ff;}
 .coin_wrap .coin_list .result_box .result_content .result_list>li+li{border-top:1px solid #d3d3d3;}
 .coin_wrap .coin_list .result_box .result_content .dvbx .item{padding:12px 8px 11px;}
-
-
 .coin_wrap .coin_info{float:right;width:calc(100% - 230px);}
 .coin_wrap .coin_info .info_box{border:1px solid #b4b4b4;}
 .coin_wrap .coin_info .info_box .infomation{padding:10px;font-size:13px;}
@@ -109,9 +105,6 @@ nav li.selected a{background:#1c90fb;border-color:#1a84e6;color:#fff;}
 .coin_wrap .coin_info .info_box .infomation dd{float:left;line-height:20px;}
 .coin_wrap .coin_info .info_box .infomation dt{clear:both;float:left;width:80px;margin-right:20px;}
 .coin_wrap .coin_info .info_box .infomation dd{width:calc(100% - 100px)}
-
-
-
 
 @media (min-width: 768px) {
     .coin_wrap{width:500px;margin:0 auto;}

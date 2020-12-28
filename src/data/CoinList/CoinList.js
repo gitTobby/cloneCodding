@@ -1,17 +1,16 @@
-import React, { Children } from "react";
+// import React, { Children } from "react";
+import React from "react";
 import SearchBox from "./SearchBox";
 import ResultBox from "./ResultBox";
 import InfoBox from "./InfoBox";
 
-class Stocks extends React.Component {
+class CoinList extends React.Component {
     constructor() {
         super();
         this.state = {
             keyword: '',
-            // marketIndex: '',
-            // marketCode: '',
+            selectedCoin: null,
         };
-        this.InfoBox = React.createRef();
     };
 
     changeValue = (keyword) => {
@@ -21,27 +20,34 @@ class Stocks extends React.Component {
         // console.log(keyword);
     }
 
-    changeMarket = (marketIndex, marketCode) => {
-        this.InfoBox.current.getCoinInfo(marketIndex, marketCode);
+    changeSelectedCoin = (selectedCoin) => {
+        //console.log(selectedCoin);
+        this.setState({
+            selectedCoin: selectedCoin
+        })
+        // console.log(selectedCoin);
     }
+
+    // changeMarket = (marketIndex, marketCode) => {
+    //     this.InfoBox.current.getCoinInfo(marketIndex, marketCode);
+    // }
 
     render() {
         return (
             <div className="coin_wrap">
                 <div className="coin_list">
                     <SearchBox 
+                        value={this.state.keyword}
                         changeValue={this.changeValue} 
                     />
                     <ResultBox 
-                        keyword={this.state.keyword} 
-                        changeMarket={this.changeMarket} 
+                        keyword={this.state.keyword}
+                        changeSelectedCoin={this.changeSelectedCoin}
                     />
                 </div>
                 <div className="coin_info">
                     <InfoBox 
-                        // marketIndex={this.state.marketIndex}
-                        // marketCode={this.state.marketCode} 
-                        ref={this.InfoBox}
+                        selectedCoin={this.state.selectedCoin}
                     />
                 </div>
             </div>
@@ -49,4 +55,4 @@ class Stocks extends React.Component {
     }
 }
 
-export default Stocks;
+export default CoinList;

@@ -6,31 +6,14 @@ class ResultBox extends React.Component {
         super(props);
         this.state = {
             loading: true,
+            selectItem: false,
             coins: [],
-            //marketCode: '',
         }
     };
 
     componentDidMount() {
         this.getCoins();
     }
-
-    // getCoins = () => {
-    //     //const coins = await JSON.stringify();
-    //     //const coins = this.state.coins;
-    //     fetch('https://api.upbit.com/v1/market/all')
-    //         .then(function(response) {
-    //             return response.json();
-    //         }).then(function(myjson) {
-    //             //console.log(JSON.stringify(myjson));
-    //             const coins = await.JSON.stringify(myjson);
-    //             this.setState({ 
-    //                 // coins: JSON.stringify(myjson),
-    //                 coins: coins,
-    //             });
-    //         });
-    //     // console.log(coins);
-    // }
 
     getCoins = async () => {
         const url = 'https://api.upbit.com/v1/market/all';
@@ -39,36 +22,34 @@ class ResultBox extends React.Component {
             coins: coins.data,
             loading: false,
         });
-        //console.log(this.state.coins);
     };
 
-    handleClick = (e) => {
-        const marketIndex = e.currentTarget.dataset.id;
-        const marketCode = this.state.coins[marketIndex].market;
-        this.props.changeMarket(marketIndex, marketCode);
-        // console.log(marketIndex);
-        // console.log(marketCode);
+    handleClick = (coin) => {
+        this.setState({
+            selectItem: true,
+        });
+        this.props.changeSelectedCoin(coin);
     }
 
     mapCoinList = (coins) => {
-        coins.sort();
+        //coins.sort(); ==> 콘솔 찍어서 테스트 해보기
         coins = coins.filter(
-            (text) => {
+            (coin) => {
                 return (
-                    text.korean_name.indexOf(this.props.keyword) > -1 || 
-                    text.english_name.indexOf(this.props.keyword) > -1
+                    coin.korean_name.indexOf(this.props.keyword) > -1 || 
+                    coin.english_name.indexOf(this.props.keyword) > -1
                 );
             }
         );
         return (
-            coins.map((coins, i) => (
-                <li key={i} data-id={i} onClick={this.handleClick}>
+            coins.map((coin, i) => (
+                <li key={i}  className={this.state.selectItem ? 'selected': null} onClick={() => this.handleClick(coin)}>
                     <div className="dvbx">
                         <div className="item">
-                            <div className="inbx">{coins.korean_name}<p>{coins.market}</p></div>
+                            <div className="inbx">{coin.korean_name}<p>{coin.market}</p></div>
                         </div>
                         <div className="item">
-                            <div className="inbx">{coins.english_name}</div>
+                            <div className="inbx">{coin.english_name}</div>
                         </div>
                     </div>
                 </li>

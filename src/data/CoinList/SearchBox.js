@@ -10,6 +10,7 @@ class SearchBox extends React.Component {
                 <input 
                     type="text" 
                     placeholder="코인명 검색" 
+                    value={this.props.keyword}
                     onChange={this.handleChange}
                 />
             </div>

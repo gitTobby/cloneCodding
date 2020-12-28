@@ -7,43 +7,28 @@ class ResultBox extends React.Component {
         this.state = {
             loading: true,
             info: [],
-            // marketIndex: '',
-            // marketCode: '',
         }
     };
 
-    // componentDidMount() {
-    //     this.getCoinInfo();
-    // }
-
-    getCoinInfo = async (index, code) => {
-        const marketIndex = index;
-        const marketCode = code;
-
-        // marketCode에 맞게 API 불러오기
-        const url = 'https://api.upbit.com/v1/ticker?markets=' + marketCode;
+    componentDidUpdate(prevProps) {
+        if(this.props.selectedCoin && (!prevProps || prevProps.selectedCoin !== this.props.selectedCoin)) {
+            this.getCoinInfo();
+        }
+    }
+    
+    getCoinInfo = async () => {
+        const url = 'https://api.upbit.com/v1/ticker?markets=' + this.props.selectedCoin.market;
         const coins = await axios.get(url);
+        //console.log(coins)
         this.setState({
             info: coins.data,
             loading: false,
         });
-        
-        console.log("** CoinList.js에서 InfoBox의 getCoinInfo(index, code) 호출완료!! **");
-        console.log('Index: ' + marketIndex + '\n' + 'Code: ' + marketCode);
-        console.log('URL: ' + url);
-
-        console.log(this.state.info);
-        
-        console.log(this.state.info.market);
-        console.log(this.state.info.low_price);
+        //console.log(this.state.info);
     };
 
     render() {
         const { info, loading } = this.state;
-
-        // console.log(this.state.info);
-        // console.log(this.props.marketIndex);
-        // console.log(this.props.marketCode);
         
         return (
             <div className="info_box">
@@ -53,11 +38,14 @@ class ResultBox extends React.Component {
                     ) : (
                         <dl className="infomation">
                             <dt>한글명</dt>
-                            <dd>{info.korean_name}</dd>
+                            <dd>{this.props.selectedCoin.korean_name}</dd>
                             <dt>영문명</dt>
-                            <dd>{info.english_name}</dd>
+                            <dd>{this.props.selectedCoin.english_name}</dd>
                             <dt>전일종가</dt>
-                            <dd>{this.state.info.market}</dd>
+                            <dd>
+                                {console.log(info.acc_trade_price)}
+                                {info.acc_trade_price}
+                            </dd>
                         </dl>
                     )
                 }
