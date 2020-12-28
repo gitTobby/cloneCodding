@@ -6,7 +6,7 @@ class ResultBox extends React.Component {
         super(props);
         this.state = {
             loading: true,
-            selectItem: false,
+            // selectItem: false,
             coins: [],
         }
     };
@@ -25,12 +25,9 @@ class ResultBox extends React.Component {
     };
 
     handleClick = (coin) => {
-        this.setState({
-            selectItem: true,
-        });
         this.props.changeSelectedCoin(coin);
     }
-
+    
     mapCoinList = (coins) => {
         //coins.sort(); ==> 콘솔 찍어서 테스트 해보기
         coins = coins.filter(
@@ -41,9 +38,10 @@ class ResultBox extends React.Component {
                 );
             }
         );
+        console.log(this.props.selectedCoin);
         return (
             coins.map((coin, i) => (
-                <li key={i}  className={this.state.selectItem ? 'selected': null} onClick={() => this.handleClick(coin)}>
+                <li key={i}  className={this.props.selectedCoin === coin ? 'selected': null} onClick={() => this.handleClick(coin)}>
                     <div className="dvbx">
                         <div className="item">
                             <div className="inbx">{coin.korean_name}<p>{coin.market}</p></div>

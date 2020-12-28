@@ -42,10 +42,7 @@ class ResultBox extends React.Component {
                             <dt>영문명</dt>
                             <dd>{this.props.selectedCoin.english_name}</dd>
                             <dt>전일종가</dt>
-                            <dd>
-                                {console.log(info.acc_trade_price)}
-                                {info.acc_trade_price}
-                            </dd>
+                            <dd>{info[0].acc_trade_price}</dd>
                         </dl>
                     )
                 }

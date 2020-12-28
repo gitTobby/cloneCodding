@@ -25,7 +25,7 @@ class CoinList extends React.Component {
         this.setState({
             selectedCoin: selectedCoin
         })
-        // console.log(selectedCoin);
+        //console.log(selectedCoin);
     }
 
     // changeMarket = (marketIndex, marketCode) => {
@@ -43,6 +43,7 @@ class CoinList extends React.Component {
                     <ResultBox 
                         keyword={this.state.keyword}
                         changeSelectedCoin={this.changeSelectedCoin}
+                        selectedCoin={this.state.selectedCoin}
                     />
                 </div>
                 <div className="coin_info">
